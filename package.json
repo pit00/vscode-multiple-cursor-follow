@@ -2,7 +2,7 @@
   "name": "multiple-cursor-follow",
   "displayName": "Multiple Cursor Follow",
   "description": "When multiple cursor, follow the first (top view) or last cursor (bottom view)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "pit00",
   "icon": "images/vscode-multiple-cursor-follow-icon.png",
   "bugs": "https://github.com/pit00/vscode-multiple-cursor-follow/issues",
