@@ -1,15 +1,15 @@
 {
-  "name": "center-editor-window",
-  "displayName": "Center Editor Window",
-  "description": "Centers your editor window at the current cursor position",
-  "version": "2.3.0",
-  "publisher": "kaiwood",
-  "icon": "images/vscode-center-editor-window-icon.png",
-  "bugs": "https://github.com/kaiwood/vscode-center-editor-window/issues",
+  "name": "multiple-cursor-follow",
+  "displayName": "Multiple Cursor Follow",
+  "description": "When multiple cursor, follow the first (top view) or last cursor (bottom view)",
+  "version": "1.0.0",
+  "publisher": "pit00",
+  "icon": "images/vscode-multiple-cursor-follow-icon.png",
+  "bugs": "https://github.com/pit00/vscode-multiple-cursor-follow/issues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kaiwood/vscode-center-editor-window"
+    "url": "https://github.com/pit00/vscode-multiple-cursor-follow"
   },
   "engines": {
     "vscode": "^1.19.0"
@@ -18,39 +18,31 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:center-editor-window.center"
+    "onCommand:multiple-cursor-follow.bottom",
+    "onCommand:multiple-cursor-follow.top"
   ],
   "main": "./out/extension",
   "contributes": {
     "commands": [
       {
-        "command": "center-editor-window.center",
-        "title": "Center Editor Window"
+        "command": "multiple-cursor-follow.bottom",
+        "title": "Multiple Cursor Follow Bottom"
+      },
+      {
+        "command": "multiple-cursor-follow.top",
+        "title": "Multiple Cursor Follow Top"
       }
     ],
     "keybindings": [
       {
-        "command": "center-editor-window.center",
-        "key": "ctrl+l",
-        "mac": "ctrl+l",
+        "command": "multiple-cursor-follow.bottom",
+        "key": "alt+pagedown",
         "when": "editorTextFocus || findWidgetVisible"
-      }
-    ],
-    "configuration": [
+      },
       {
-        "title": "Center Editor Window configuration",
-        "properties": {
-          "center-editor-window.threeStateToggle": {
-            "type": "boolean",
-            "default": false,
-            "description": "Toggle between line center/top/bottom."
-          },
-          "center-editor-window.offset": {
-            "type": "integer",
-            "default": "0",
-            "description": "Offset from the bottom when centering. A negative number will move the current line lower than the center."
-          }
-        }
+        "command": "multiple-cursor-follow.top",
+        "key": "alt+pageup",
+        "when": "editorTextFocus || findWidgetVisible"
       }
     ]
   },

@@ -6,7 +6,7 @@ Cancel timeout for the 3-state toggle when the active editor changes
 
 ## 2.1.0
 
-Additional setting `center-editor-window.threeStateToggle: true/false` to enable toggling between centering the current line center, moving it to the top of the viewport and moving it to the bottom.
+Additional setting `multiple-cursor-follow.threeStateToggle: true/false` to enable toggling between centering the current line center, moving it to the top of the viewport and moving it to the bottom.
 
 ## 2.0.2
 
