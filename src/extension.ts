@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
         toBottom();
     });
     
-    disposable = vscode.commands.registerCommand("multiple-cursor-follow.topper", () => {
+    disposable = vscode.commands.registerCommand("multiple-cursor-follow.top", () => {
         toTop();
     });
 
