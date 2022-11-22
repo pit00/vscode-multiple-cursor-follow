@@ -8,6 +8,10 @@ export function activate(context: vscode.ExtensionContext) {
         toBottom();
     });
     
+    disposable = vscode.commands.registerCommand("multiple-cursor-follow.center", () => {
+        toCenter();
+    });
+
     disposable = vscode.commands.registerCommand("multiple-cursor-follow.top", () => {
         toTop();
     });
@@ -25,9 +29,17 @@ async function toTop() {
 
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: topper,
-        at: "top"
+        at: vscode.workspace.getConfiguration("multiple-cursor-follow").get("firstView")
     });
 }
+
+async function toCenter() {
+    let currentLineNumber = vscode.window.activeTextEditor.selection.start.line;
+    await vscode.commands.executeCommand("revealLine", {
+      lineNumber: currentLineNumber,
+      at: "center"
+    });
+  }
 
 async function toBottom() {
     let temp = []
@@ -39,7 +51,7 @@ async function toBottom() {
 
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: bottom,
-        at: "bottom"
+        at: vscode.workspace.getConfiguration("multiple-cursor-follow").get("lastView")
     });
 }
 
