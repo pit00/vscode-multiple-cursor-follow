@@ -1,80 +1,39 @@
 {
-    "name": "multiple-cursor-follow",
-    "displayName": "Multiple Cursor Follow",
-    "description": "When multiple cursor, follow the first (top view) or last cursor (bottom view)",
-    "version": "1.0.2",
+    "name": "cursor-view-focus",
+    "displayName": "Cursor View Focus",
+    "description": "Focus the active cursor view at the by bottom, center or top",
+    "version": "1.0.5",
     "publisher": "pit00",
-    "icon": "images/vscode-multiple-cursor-follow-icon.png",
+    "icon": "images/cursor-view-focus-icon.png",
     "bugs": "https://github.com/pit00/vscode-multiple-cursor-follow/issues",
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/pit00/vscode-multiple-cursor-follow"
     },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
     "engines": {
         "vscode": "^1.19.0"
     },
     "categories": [
         "Other"
     ],
-    "activationEvents": [
-        "onCommand:multiple-cursor-follow.bottom",
-        "onCommand:multiple-cursor-follow.center",
-        "onCommand:multiple-cursor-follow.top"
-    ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "multiple-cursor-follow.bottom",
+                "command": "cursor-view-focus.bottom",
                 "title": "Multiple Cursor Follow Bottom"
             },
             {
-                "command": "multiple-cursor-follow.center",
+                "command": "cursor-view-focus.center",
                 "title": "Center Active Cursor"
             },
             {
-                "command": "multiple-cursor-follow.top",
+                "command": "cursor-view-focus.top",
                 "title": "Multiple Cursor Follow Top"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "multiple-cursor-follow.bottom",
-                "key": "alt+pagedown",
-                "when": "editorTextFocus || findWidgetVisible"
-            },
-            {
-                "command": "multiple-cursor-follow.top",
-                "key": "alt+pageup",
-                "when": "editorTextFocus || findWidgetVisible"
-            }
-        ],
-        "configuration": [
-            {
-                "title": "Multiple Cursor Follow Configuration",
-                "properties": {
-                    "multiple-cursor-follow.firstView": {
-                        "type": "string",
-                        "default": "top",
-                        "enum": [
-                            "top",
-                            "center",
-                            "bottom"
-                        ],
-                        "description": "Choose view for first cursor"
-                    },
-                    "multiple-cursor-follow.lastView": {
-                        "type": "string",
-                        "default": "bottom",
-                        "enum": [
-                            "top",
-                            "center",
-                            "bottom"
-                        ],
-                        "description": "Choose view for last cursor"
-                    }
-                }
             }
         ]
     },

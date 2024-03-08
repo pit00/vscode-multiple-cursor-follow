@@ -4,15 +4,15 @@ import * as vscode from "vscode";
 export function activate(context: vscode.ExtensionContext) {
     let disposable;
     
-    disposable = vscode.commands.registerCommand("multiple-cursor-follow.bottom", () => {
+    disposable = vscode.commands.registerCommand("cursor-view-focus.bottom", () => {
         toBottom();
     });
     
-    disposable = vscode.commands.registerCommand("multiple-cursor-follow.center", () => {
+    disposable = vscode.commands.registerCommand("cursor-view-focus.center", () => {
         toCenter();
     });
 
-    disposable = vscode.commands.registerCommand("multiple-cursor-follow.top", () => {
+    disposable = vscode.commands.registerCommand("cursor-view-focus.top", () => {
         toTop();
     });
 
@@ -29,17 +29,18 @@ async function toTop() {
 
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: topper,
-        at: vscode.workspace.getConfiguration("multiple-cursor-follow").get("firstView")
+        at: "top"
+        // at: vscode.workspace.getConfiguration("cursor-view-focus").get("firstView")
     });
 }
 
 async function toCenter() {
     let currentLineNumber = vscode.window.activeTextEditor.selection.start.line;
     await vscode.commands.executeCommand("revealLine", {
-      lineNumber: currentLineNumber,
-      at: "center"
+        lineNumber: currentLineNumber,
+        at: "center"
     });
-  }
+}
 
 async function toBottom() {
     let temp = []
@@ -51,7 +52,8 @@ async function toBottom() {
 
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: bottom,
-        at: vscode.workspace.getConfiguration("multiple-cursor-follow").get("lastView")
+        at: "bottom"
+        // at: vscode.workspace.getConfiguration("cursor-view-focus").get("lastView")
     });
 }
 
