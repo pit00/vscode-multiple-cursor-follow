@@ -1,8 +1,8 @@
 {
     "name": "cursor-view-focus",
     "displayName": "Cursor View Focus",
-    "description": "Focus the active cursor view at the by bottom, center or top",
-    "version": "1.0.5",
+    "description": "Focus the active cursor view at the bottom, center or top",
+    "version": "1.0.6",
     "publisher": "pit00",
     "icon": "images/cursor-view-focus-icon.png",
     "bugs": "https://github.com/pit00/vscode-multiple-cursor-follow/issues",
