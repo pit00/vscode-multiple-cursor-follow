@@ -57,6 +57,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 async function toMainBottom() {
     let currentLineNumber = vscode.window.activeTextEditor.selection.start.line;
+    
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: currentLineNumber,
         at: "bottom"
@@ -65,6 +66,7 @@ async function toMainBottom() {
 
 async function toMainCenter() {
     let currentLineNumber = vscode.window.activeTextEditor.selection.start.line;
+    
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: currentLineNumber,
         at: "center"
@@ -73,6 +75,7 @@ async function toMainCenter() {
 
 async function toMainTop() {
     let currentLineNumber = vscode.window.activeTextEditor.selection.start.line;
+    
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: currentLineNumber,
         at: "top"
@@ -82,6 +85,7 @@ async function toMainTop() {
 async function toRecentBottom() {
     let recent = vscode.window.activeTextEditor.selections.length
     let currentLineNumber = vscode.window.activeTextEditor.selections[recent - 1].start.line;
+    
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: currentLineNumber,
         at: "bottom"
@@ -89,7 +93,9 @@ async function toRecentBottom() {
 }
 
 async function toRecentCenter() {
-    let currentLineNumber = vscode.window.activeTextEditor.selection.start.line;
+    let recent = vscode.window.activeTextEditor.selections.length
+    let currentLineNumber = vscode.window.activeTextEditor.selections[recent - 1].start.line;
+    
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: currentLineNumber,
         at: "center"
@@ -97,7 +103,9 @@ async function toRecentCenter() {
 }
 
 async function toRecentTop() {
-    let currentLineNumber = vscode.window.activeTextEditor.selection.start.line;
+    let recent = vscode.window.activeTextEditor.selections.length
+    let currentLineNumber = vscode.window.activeTextEditor.selections[recent - 1].start.line;
+    
     await vscode.commands.executeCommand("revealLine", {
         lineNumber: currentLineNumber,
         at: "top"
