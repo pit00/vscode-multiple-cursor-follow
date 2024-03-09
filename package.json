@@ -2,7 +2,7 @@
     "name": "cursor-view-focus",
     "displayName": "Cursor View Focus",
     "description": "Focus the active cursor view at the bottom, center or top",
-    "version": "1.0.6",
+    "version": "1.1.0",
     "publisher": "pit00",
     "icon": "images/cursor-view-focus-icon.png",
     "bugs": "https://github.com/pit00/vscode-multiple-cursor-follow/issues",
@@ -24,16 +24,52 @@
     "contributes": {
         "commands": [
             {
-                "command": "cursor-view-focus.bottom",
-                "title": "Multiple Cursor Follow Bottom"
+                "command": "cursor-view-focus.mainBottom",
+                "title": "Bottom view of main (primary) cursor"
             },
             {
-                "command": "cursor-view-focus.center",
-                "title": "Center Active Cursor"
+                "command": "cursor-view-focus.mainCenter",
+                "title": "Center view of main (primary) cursor"
             },
             {
-                "command": "cursor-view-focus.top",
-                "title": "Multiple Cursor Follow Top"
+                "command": "cursor-view-focus.mainTop",
+                "title": "Top view of main (primary) cursor"
+            },
+            {
+                "command": "cursor-view-focus.recentBottom",
+                "title": "Bottom view of last created cursor"
+            },
+            {
+                "command": "cursor-view-focus.recentCenter",
+                "title": "Center view of last created cursor"
+            },
+            {
+                "command": "cursor-view-focus.recentTop",
+                "title": "Top view of last created cursor"
+            },
+            {
+                "command": "cursor-view-focus.firstBottom",
+                "title": "Bottom view of first positioned cursor"
+            },
+            {
+                "command": "cursor-view-focus.firstCenter",
+                "title": "Center view of first positioned cursor"
+            },
+            {
+                "command": "cursor-view-focus.firstTop",
+                "title": "Top view of first positioned cursor"
+            },
+            {
+                "command": "cursor-view-focus.finalBottom",
+                "title": "Bottom view of last positioned cursor"
+            },
+            {
+                "command": "cursor-view-focus.finalCenter",
+                "title": "Center view of last positioned cursor"
+            },
+            {
+                "command": "cursor-view-focus.finalTop",
+                "title": "Top view of last positioned cursor"
             }
         ]
     },
